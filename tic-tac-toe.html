@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang='en' ng-app>
+<html lang='en' ng-app='ticApp'>
 	<head>
 		<meta charset='utf-8'/>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -9,12 +9,18 @@
 		<meta name="copyright" content="Rainier Harvey"/>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 	</head>
-	<body>
-		<p>1 + 1 = {{ 1+1 }}</p>
+	<body ng-controller='PossListCtrl'>
+		<ul>
+			<li ng-repeat='val in poss'>
+				<span>{{val.poss}}</span>
+				<p>{{val.value}}</p>
+			</li>
+		</ul>
 		<div id='footer'>
 		</div>
 		<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.8/angular.min.js'></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+		<script src='js/controller.js'></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 	</body>
 </html>
