@@ -19,35 +19,35 @@ function checkWin(table) {
 	 * the board possitions
 	 */
 	'use strict';
-	var set = [table[0].value, table[1].value, table[2].value]
+	var set = [table[0].value, table[1].value, table[2].value];
 	if ((table[0].value !== ' ') &&  (set.allSame() === true)){
 		return table[0].value;
 	}
-	set = [table[0].value, table[3].value, table[6].value]
+	set = [table[0].value, table[3].value, table[6].value];
 	if ((table[0].value !== ' ') &&  (set.allSame() ===true)){
 		return table[0].value;
 	}
-	set = [table[0].value, table[4].value, table[8].value]
+	set = [table[0].value, table[4].value, table[8].value];
 	if ((table[0].value !== ' ') &&  (set.allSame() === true)){
 		return table[0].value;
 	}
-	set = [table[1].value, table[4].value, table[7].value]
+	set = [table[1].value, table[4].value, table[7].value];
 	if ((table[1].value !== ' ') &&  (set.allSame() === true)){
 		return table[1].value;
 	} 
-	set = [table[2].value, table[5].value, table[8].value]
+	set = [table[2].value, table[5].value, table[8].value];
 	if ((table[2].value !== ' ') &&  (set.allSame() === true)){
 		return table[2].value;
 	} 
-	set = [table[2].value, table[4].value, table[6].value]
+	set = [table[2].value, table[4].value, table[6].value];
 	if ((table[2].value !== ' ') &&  (set.allSame() === true)){
 		return table[2];
 	} 
-	set = [table[3].value, table[4].value, table[5].value]
+	set = [table[3].value, table[4].value, table[5].value];
 	if ((table[3].value !== ' ') &&  (set.allSame() === true)){
-		return table[0].value;
+		return table[3].value;
 	} 
-	set = [table[6].value, table[7].value, table[8].value]
+	set = [table[6].value, table[7].value, table[8].value];
 	if ((table[6].value !== ' ') &&  (set.allSame() === true)){
 		return table[6].value;
 	} 

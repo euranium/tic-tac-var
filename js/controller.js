@@ -45,41 +45,38 @@ ticApp.controller('PossListCtrl', function ($scope) {
 	];
 	$scope.moves = 0;
 	$scope.win = ' ';
+	$scope.xWin = 0;
+	$scope.oWin = 0;
 	$scope.clearBoard = function () {
 		var i;
-		for (i = 0; i < 8; i++) {
+		for (i = 0; i < 9; i++) {
 			this.loc[i].value = ' ';
 		}
+		this.moves = 0;
 	};
 
 	$scope.assignTo = function (poss) {
 		if (this.loc[poss].value !== ' ') {
 			return swal('you cant move there', 'that possition is taken', 'error');
 		}
+
 		if (this.moves % 2 === 0) {
 			this.loc[poss].value = 'x';
 		} else {
 			this.loc[poss].value = 'o';
 		}
-		var clearBoard = this.clearBoard;
+
 		this.win = checkWin(this.loc);
+
 		if (this.win !== ' ') {
-			swal({
-				title: this.win + ' has won',
-				text: 'do you want to play again?',
-				type: 'success',
-				showCancelButton: true,
-				confirmButtonColor: "#DD6B55",
-				confirmButtonText: "Yes, delete it!",
-				closeOnConfirm: false,
-				closeOnCancel: false
-			}, function (isConfirm) {
-				if (isConfirm) {
-					$clearBoard;
-				} else {
-					return;
-				}
-			});
+			swal('Player ' + this.win + ' has won');
+			if (this.win === 'o') {
+				this.oWin++;
+			} else {
+				this.xWin++;
+			}
+		} else if (this.moves === 8) {
+			swal('Cats game');
 		}
 		return this.moves++;
 	};
