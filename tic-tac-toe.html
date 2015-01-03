@@ -8,19 +8,41 @@
 		<meta name="author" content="Rainier Harvey"/>
 		<meta name="copyright" content="Rainier Harvey"/>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+		<link rel='stylesheet' href='lib/sweet-alert.css'>
+		<link rel='stylesheet' href='css/index.css'>
 	</head>
 	<body ng-controller='PossListCtrl'>
-		<ul>
-			<li ng-repeat='val in poss'>
+		<!--ul id='values'>
+			<li ng-repeat='val in value'>
 				<span>{{val.poss}}</span>
-				<p>{{val.value}}</p>
+				<p>{{val}}</p>
 			</li>
-		</ul>
+		</ul -->
+		<table id='ticTable'>
+			<tr><th>Table</th></tr>
+			<tr id='row1'> 
+				<td ng-click='assignTo(0)'>{{(loc | filter:{"poss": 0})[0].value }}</td>
+				<td ng-click='assignTo(1)'>{{(loc | filter:{"poss": 1})[0].value }}</td>
+				<td ng-click='assignTo(2)'>{{(loc | filter:{"poss": 2})[0].value }}</td>
+			</tr> 
+			<tr id='row2'> 
+				<td ng-click='assignTo(3)'>{{(loc | filter:{"poss": 3})[0].value }}</td>
+				<td ng-click='assignTo(4)'>{{(loc | filter:{"poss": 4})[0].value }}</td>
+				<td ng-click='assignTo(5)'>{{(loc | filter:{"poss": 5})[0].value }}</td>
+			</tr>
+			<tr id='row3'> 
+				<td class='last' ng-click='assignTo(6)'>{{(loc | filter:{"poss": 6})[0].value }}</td>
+				<td class='last' ng-click='assignTo(7)'>{{(loc | filter:{"poss": 7})[0].value }}</td>
+				<td class='last' ng-click='assignTo(8)'>{{(loc | filter:{"poss": 8})[0].value }}</td>
+			</tr>
+		</table>
 		<div id='footer'>
 		</div>
 		<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.8/angular.min.js'></script>
+		<script src='js/ticTac.js'></script>
 		<script src='js/controller.js'></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script src='lib/sweet-alert.min.js'></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 	</body>
 </html>

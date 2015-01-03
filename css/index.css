@@ -1,0 +1,29 @@
+#ticTable {
+	border-collapse: collapse;
+	
+}
+
+#ticTable td {
+	border-left: 1px solid #000;
+	text-align: center;
+	width: 50px;
+	height: 50px; 
+	border-right: 1px solid #000;
+	border-bottom: 1px solid black;
+}
+
+#ticTable .last{
+	border-bottom: none;
+}
+
+#ticTable td:first-child {
+border-left: none;
+}
+
+#ticTable td:last-child {
+border-right: none;
+}
+
+#values {
+	list-style-type: none;
+}
