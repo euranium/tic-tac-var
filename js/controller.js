@@ -1,7 +1,25 @@
 /*jslint browser: true*/
 /*jslint plusplus: true */
 /*global $, jQuery, angular, $scope, console, swal, checkWin*/
-var ticApp = angular.module('ticApp', []);
+
+var ticApp = angular.module('ticApp', ['ngRoute']);
+
+ticApp.config(function ($routeProvider) {
+	'use strict';
+	$routeProvider.
+		when('/', {
+			templateUrl: 'partials/menu.html',
+			controller: 'PossListCtrl'
+		}).
+		when('/foursquare', {
+			templateUrl: 'partials/fourSquare.html',
+			controller: 'fourListCtrl'
+		}).
+		when('/classic', {
+			templateUrl: 'partials/tic-tac-toe.html',
+			controller: 'PossListCtrl'
+		});
+});
 
 ticApp.controller('PossListCtrl', function ($scope) {
 	'use strict';
@@ -81,5 +99,4 @@ ticApp.controller('PossListCtrl', function ($scope) {
 		return this.moves++;
 	};
 });
-
 

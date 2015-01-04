@@ -8,26 +8,19 @@
 		<meta name="author" content="Rainier Harvey"/>
 		<meta name="copyright" content="Rainier Harvey"/>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+		<link rel='stylesheet' href='lib/sweet-alert.css'>
 		<link rel='stylesheet' href='css/index.css'>
 	</head>
-	<body ng-controller='PossListCtrl' ng-init='value = loc'>
-		<ul>
-			<li ng-repeat='val in value'>
-				<span>{{val.poss}}</span>
-				<p>{{val}}</p>
-			</li>
-		</ul>
-		<table id='ticTable'>
-			<tr><th>Table</th></tr>
-			<tr id='row1'> <td ng-repeat='key in value| filter:{"col": 0}: true'>{{key.value}}</td></tr> 
-			<tr id='row2'> <td ng-repeat='key in value | filter:{"col": 1}: true'>{{key.value}}</td></tr>
-			<tr id='row3'> <td ng-repeat='key in value | filter:{"col": 2}: true'>{{key.value}}</td></tr>
-		</table>
+	<body>
+		<div ng-view></div>
 		<div id='footer'>
 		</div>
-		<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.8/angular.min.js'></script>
-		<script src='js/controller.js'></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.8/angular.js'></script>
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.8/angular-route.min.js'></script>
+		<script src='js/controller.js'></script>
+		<script src='js/ticTac.js'></script>
+		<script src='lib/sweet-alert.min.js'></script>
 	</body>
 </html>

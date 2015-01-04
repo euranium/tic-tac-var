@@ -2,10 +2,22 @@ html, body {
 	width: 100%;
 }
 
+#choices {
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20%;
+	width: 350px;
+}
+#classTic, #fourSqure , #ticIn {
+	margin-top: 10px;
+	max-width: 200px;
+	min-width: 200px;
+}
+
 #regTic {
 	margin; 0 auto;
 	width: 350px;
-	border: 1px solid black;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 50px;
