@@ -2,7 +2,7 @@
 /*jslint plusplus: true */
 /*global $, jQuery, angular, $scope, console, swal, checkWin*/
 
-var ticApp = angular.module('ticApp', ['ngRoute']);
+var ticApp = angular.module('ticApp', ['ngRoute', 'ticApp']);
 
 ticApp.config(function ($routeProvider) {
 	'use strict';
@@ -12,7 +12,7 @@ ticApp.config(function ($routeProvider) {
 			controller: 'PossListCtrl'
 		}).
 		when('/foursquare', {
-			templateUrl: 'partials/fourSquare.html',
+			templateUrl: 'partials/four.html',
 			controller: 'fourListCtrl'
 		}).
 		when('/classic', {
@@ -21,10 +21,14 @@ ticApp.config(function ($routeProvider) {
 		});
 });
 
+ticApp.controller('fourListCtrl', function ($scope, $http) {
+	'use strict';
+	$scope.message = 'hello';
+});
+
 ticApp.controller('PossListCtrl', function ($scope, $http) {
 	'use strict';
-	$scope.loc = null;
-	$http.get('js/board.json').success(function (data) {
+	$http.get('js/classic.json').success(function (data) {
 		$scope.loc = data;
 	});
 	$scope.moves = 0;
@@ -40,7 +44,6 @@ ticApp.controller('PossListCtrl', function ($scope, $http) {
 	};
 
 	$scope.assignTo = function (poss) {
-		console.log(this.loc);
 		if (this.loc[poss].value !== ' ') {
 			return swal('you cant move there', 'that possition is taken', 'error');
 		}

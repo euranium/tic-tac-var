@@ -2,6 +2,22 @@ html, body {
 	width: 100%;
 }
 
+#menu_button {
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+	width: 100%;
+}
+
+#menuButton {
+	margin-left: 128px;
+	position: relative;
+}
+#menu_choices {
+	margin-left: 87px;
+	text-align: center;
+}
+
 #choices {
 	text-align: center;
 	margin-left: auto;
