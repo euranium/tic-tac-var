@@ -3,19 +3,19 @@
 	<h3>Classic Tic-Tac-Toe</h3>
 	<table id='ticTable'>
 		<tr id='row1'> 
-			<td ng-click='assignTo(0)'>{{(loc | filter:{"poss": 0})[0].value }}</td>
-			<td ng-click='assignTo(1)'>{{(loc | filter:{"poss": 1})[0].value }}</td>
-			<td ng-click='assignTo(2)'>{{(loc | filter:{"poss": 2})[0].value }}</td>
+			<td ng-click='assignTo(0)'>{{ loc[0].value }}</td>
+			<td ng-click='assignTo(1)'>{{ loc[1].value }}</td>
+			<td ng-click='assignTo(2)'>{{ loc[2].value }}</td>
 		</tr> 
 		<tr id='row2'> 
-			<td ng-click='assignTo(3)'>{{(loc | filter:{"poss": 3})[0].value }}</td>
-			<td ng-click='assignTo(4)'>{{(loc | filter:{"poss": 4})[0].value }}</td>
-			<td ng-click='assignTo(5)'>{{(loc | filter:{"poss": 5})[0].value }}</td>
+			<td ng-click='assignTo(3)'>{{ loc[3].value  }}</td>
+			<td ng-click='assignTo(4)'>{{ loc[4].value }}</td>
+			<td ng-click='assignTo(5)'>{{ loc[5].value }}</td>
 		</tr>
 		<tr id='row3'> 
-			<td class='last' ng-click='assignTo(6)'>{{(loc | filter:{"poss": 6})[0].value }}</td>
-			<td class='last' ng-click='assignTo(7)'>{{(loc | filter:{"poss": 7})[0].value }}</td>
-			<td class='last' ng-click='assignTo(8)'>{{(loc | filter:{"poss": 8})[0].value }}</td>
+			<td class='last' ng-click='assignTo(6)'>{{ loc[6].value }}</td>
+			<td class='last' ng-click='assignTo(7)'>{{ loc[7].value }}</td>
+			<td class='last' ng-click='assignTo(8)'>{{ loc[8].value }}</td>
 		</tr>
 	</table>
 	<button id='clear' class='btn btn-primary' ng-click='clearBoard()'>Clear the Board</button>

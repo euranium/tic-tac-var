@@ -21,46 +21,12 @@ ticApp.config(function ($routeProvider) {
 		});
 });
 
-ticApp.controller('PossListCtrl', function ($scope) {
+ticApp.controller('PossListCtrl', function ($scope, $http) {
 	'use strict';
-	$scope.loc = [
-		{'poss': 0,
-			'row': 0,
-			'col': 0,
-			'value': ' '},
-		{'poss': 1,
-			'row': 0,
-			'col': 1,
-			'value': ' '},
-		{'poss': 2,
-			'row': 0,
-			'col': 2,
-			'value': ' '},
-		{'poss': 3,
-			'row': 1,
-			'col': 0,
-			'value': ' '},
-		{'poss': 4,
-			'row': 1,
-			'col': 1,
-			'value': ' '},
-		{'poss': 5,
-			'row': 1,
-			'col': 2,
-			'value': ' '},
-		{'poss': 6,
-			'row': 2,
-			'col': 0,
-			'value': ' '},
-		{'poss': 7,
-			'row': 2,
-			'col': 1,
-			'value': ' '},
-		{'poss': 8,
-			'row': 2,
-			'col': 2,
-			'value': ' '}
-	];
+	$scope.loc = null;
+	$http.get('js/board.json').success(function (data) {
+		$scope.loc = data;
+	});
 	$scope.moves = 0;
 	$scope.win = ' ';
 	$scope.xWin = 0;
@@ -74,6 +40,7 @@ ticApp.controller('PossListCtrl', function ($scope) {
 	};
 
 	$scope.assignTo = function (poss) {
+		console.log(this.loc);
 		if (this.loc[poss].value !== ' ') {
 			return swal('you cant move there', 'that possition is taken', 'error');
 		}
@@ -99,4 +66,3 @@ ticApp.controller('PossListCtrl', function ($scope) {
 		return this.moves++;
 	};
 });
-
