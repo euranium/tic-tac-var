@@ -23,7 +23,33 @@ ticApp.config(function ($routeProvider) {
 
 ticApp.controller('fourListCtrl', function ($scope, $http) {
 	'use strict';
-	$scope.message = 'hello';
+	$http.get('js/four.json').success(function (data) {
+		$scope.board = data;
+	});
+	$scope.moves = 0;
+	$scope.clearBoard = function () {
+		var i;
+		for (i = 0; i < 16; i++) {
+			this.loc[i].value = ' ';
+		}
+		this.moves = 0;
+	};
+	$scope.boardVal = function (val) {
+		if (val.x === null) {
+			$scope.car = 'y';
+			console.log(this.car);
+			return this.car;
+		}
+		if (val.x === true) {
+			$scope.car = 'x';
+		} else {
+			$scope.car = 'o';
+		}
+		if (val.cap === true) {
+			$scope.car = $scope.car.toUpperCase();
+		}
+		return $scope.car;
+	};
 });
 
 ticApp.controller('PossListCtrl', function ($scope, $http) {
