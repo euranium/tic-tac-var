@@ -2,28 +2,28 @@
 	<h3>Four Square Tic-Tac-Toe</h3>
 	<table id='ticTable'>
 		<tr id='row1'>
-			<td ng-click='boardReval(board[0])'>{{ boardVal(board[0]) }} </td>
-			<td>{{ boardVal(board[1]) }}</td>
-			<td>{{ boardVal(board[2]) }}</td>
-			<td>{{ boardVal(board[3]) }}</td> 
+			<td ng-click='boardReval(board[0])'>{{ boardVal(board.start[0]) }} </td>
+			<td>{{ boardVal(board.start[1]) }}</td>
+			<td>{{ boardVal(board.start[2]) }}</td>
+			<td>{{ boardVal(board.start[3]) }}</td> 
 		</tr>
 		<tr id='row2'>
-			<td>{{ boardVal(board[4]) }}</td>
-			<td>{{ boardVal(board[5]) }}</td>
-			<td>{{ boardVal(board[6]) }}</td>
-			<td>{{ boardVal(board[7]) }}</td> 
+			<td>{{ boardVal(board.start[4]) }}</td>
+			<td>{{ boardVal(board.start[5]) }}</td>
+			<td>{{ boardVal(board.start[6]) }}</td>
+			<td>{{ boardVal(board.start[7]) }}</td> 
 		</tr> 
 		<tr id='row3'>
-			<td>{{ boardVal(board[8]) }}</td>
-			<td>{{ boardVal(board[9]) }}</td>
-			<td>{{ boardVal(board[10]) }}</td>
-			<td>{{ boardVal(board[11]) }}</td> 
+			<td>{{ boardVal(board.start[8]) }}</td>
+			<td>{{ boardVal(board.start[9]) }}</td>
+			<td>{{ boardVal(board.start[10]) }}</td>
+			<td>{{ boardVal(board.start[11]) }}</td> 
 		</tr>
 		<tr id='row4'>
-			<td class='last'>{{ boardVal(board[12]) }}</td>
-			<td class='last'>{{ boardVal(board[13]) }}</td>
-			<td class='last'>{{ boardVal(board[14]) }}</td>
-			<td class='last'>{{ boardVal(board[15]) }}</td> 
+			<td class='last'>{{ boardVal(board.start[12]) }}</td>
+			<td class='last'>{{ boardVal(board.start[13]) }}</td>
+			<td class='last'>{{ boardVal(board.start[14]) }}</td>
+			<td class='last'>{{ boardVal(board.start[15]) }}</td> 
 		</tr>  
 	</table >
 </div>

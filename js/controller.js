@@ -69,10 +69,11 @@ ticApp.controller('PossListCtrl', function ($scope, $http) {
 			this.loc[i].value = ' ';
 		}
 		this.moves = 0;
+		this.winTrue = false;
 	};
 
 	$scope.assignTo = function (poss) {
-		if (this.winTrue === true) {
+		if ($scope.winTrue === true) {
 			return swal('Reset the board to continue playing');
 		}
 		if (this.loc[poss].value !== ' ') {
@@ -88,6 +89,7 @@ ticApp.controller('PossListCtrl', function ($scope, $http) {
 		this.win = checkWin(this.loc);
 
 		if (this.win !== ' ') {
+			this.winTrue = true;
 			swal('Player ' + this.win + ' has won');
 			if (this.win === 'o') {
 				this.oWin++;
@@ -97,7 +99,6 @@ ticApp.controller('PossListCtrl', function ($scope, $http) {
 		} else if (this.moves === 8) {
 			swal('Cats game');
 		}
-		this.winTrue = true;
 		return this.moves++;
 	};
 });
