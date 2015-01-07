@@ -23,7 +23,7 @@ ticApp.config(function ($routeProvider) {
 
 ticApp.controller('fourListCtrl', function ($scope, $http) {
 	'use strict';
-	$http.get('js/four.json').success(function (data) {
+	$http.get('js/json/four.json').success(function (data) {
 		$scope.board = data;
 	});
 	$scope.moves = 0;
@@ -35,9 +35,10 @@ ticApp.controller('fourListCtrl', function ($scope, $http) {
 		this.moves = 0;
 	};
 	$scope.boardVal = function (val) {
+		if (val === null) {
+			return ' ';
+		}
 		if (val.x === null) {
-			$scope.car = 'y';
-			console.log(this.car);
 			return this.car;
 		}
 		if (val.x === true) {
@@ -54,11 +55,12 @@ ticApp.controller('fourListCtrl', function ($scope, $http) {
 
 ticApp.controller('PossListCtrl', function ($scope, $http) {
 	'use strict';
-	$http.get('js/classic.json').success(function (data) {
+	$http.get('js/json/classic.json').success(function (data) {
 		$scope.loc = data;
 	});
 	$scope.moves = 0;
 	$scope.win = ' ';
+	$scope.winTrue = false;
 	$scope.xWin = 0;
 	$scope.oWin = 0;
 	$scope.clearBoard = function () {
@@ -70,6 +72,9 @@ ticApp.controller('PossListCtrl', function ($scope, $http) {
 	};
 
 	$scope.assignTo = function (poss) {
+		if (this.winTrue === true) {
+			return swal('Reset the board to continue playing');
+		}
 		if (this.loc[poss].value !== ' ') {
 			return swal('you cant move there', 'that possition is taken', 'error');
 		}
@@ -92,6 +97,7 @@ ticApp.controller('PossListCtrl', function ($scope, $http) {
 		} else if (this.moves === 8) {
 			swal('Cats game');
 		}
+		this.winTrue = true;
 		return this.moves++;
 	};
 });
