@@ -1,8 +1,8 @@
 /*global $, angular, */
 
-var ticApp = angular.module('ticApp', ['ngRoute', 'PossListCrtl', 'fourListCtrl']);
+var ticApp = angular.module('ticApp', ['ngRoute', 'TicTacController']);
 
-ticApp.config(function ($routeProvider) {
+ticApp.config(['$routeProvider', function ($routeProvider) {
 	'use strict';
 	$routeProvider.
 		when('/', {
@@ -14,7 +14,7 @@ ticApp.config(function ($routeProvider) {
 			controller: 'PossListCrtl'
 		})
 		.when('/foursquare', {
-			templareUrl: 'partials/tic-tac-toe.html',
+			templareUrl: 'partials/four.html',
 			controller: 'fourListCtrl'
 		});
-});
+}]);

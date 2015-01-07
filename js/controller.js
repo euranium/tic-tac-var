@@ -2,8 +2,8 @@
 /*jslint plusplus: true */
 /*global $, jQuery, angular, $scope, console, swal, checkWin*/
 
-var ticApp = angular.module('ticApp', ['ngRoute', 'ticApp']);
-
+var TicTacController = angular.module('ticApp', ['ticApp']);
+/*
 ticApp.config(function ($routeProvider) {
 	'use strict';
 	$routeProvider.
@@ -20,8 +20,8 @@ ticApp.config(function ($routeProvider) {
 			controller: 'PossListCtrl'
 		});
 });
-
-ticApp.controller('fourListCtrl', function ($scope, $http) {
+*/
+TicTacController.controller('fourListCtrl', ['$scope', '$http', function ($scope, $http) {
 	'use strict';
 	$http.get('js/json/four.json').success(function (data) {
 		$scope.board = data;
@@ -51,9 +51,9 @@ ticApp.controller('fourListCtrl', function ($scope, $http) {
 		}
 		return $scope.car;
 	};
-});
+}]);
 
-ticApp.controller('PossListCtrl', function ($scope, $http) {
+TicTacController.controller('PossListCtrl', ['$scope', '$http', function ($scope, $http) {
 	'use strict';
 	$http.get('js/json/classic.json').success(function (data) {
 		$scope.loc = data;
@@ -101,4 +101,4 @@ ticApp.controller('PossListCtrl', function ($scope, $http) {
 		}
 		return this.moves++;
 	};
-});
+}]);
