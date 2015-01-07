@@ -2,7 +2,7 @@
 /*jslint plusplus: true */
 /*global $, jQuery, angular, $scope, console, swal, checkWin*/
 
-var TicTacController = angular.module('ticApp', ['ticApp']);
+var TicTacController = angular.module('TicTacController', []);
 /*
 ticApp.config(function ($routeProvider) {
 	'use strict';
@@ -27,6 +27,7 @@ TicTacController.controller('fourListCtrl', ['$scope', '$http', function ($scope
 		$scope.board = data;
 	});
 	$scope.moves = 0;
+	$scope.message = 'here';
 	$scope.clearBoard = function () {
 		var i;
 		for (i = 0; i < 16; i++) {
