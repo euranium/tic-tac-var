@@ -20,7 +20,7 @@ ticApp.config(function ($routeProvider) {
 			controller: 'PossListCtrl'
 		});
 });
-*/
+
 TicTacController.controller('fourListCtrl', ['$scope', '$http', function ($scope, $http) {
 	'use strict';
 	$http.get('js/json/four.json').success(function (data) {
@@ -53,7 +53,7 @@ TicTacController.controller('fourListCtrl', ['$scope', '$http', function ($scope
 		return $scope.car;
 	};
 }]);
-
+*/
 TicTacController.controller('PossListCtrl', ['$scope', '$http', function ($scope, $http) {
 	'use strict';
 	$http.get('js/json/classic.json').success(function (data) {

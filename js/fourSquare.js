@@ -1,8 +1,36 @@
 /*global $, jQuery, angular, module, scope */
 
-var fourSquareCtrl = angular.module('fourSquarCtrl', []);
+var fourSquareCtrl = angular.module('fourSquareCtrl', []);
 
-fourSquareCtrl.controller('fourListCtrl', function ($scope, $http) {
+fourSquareCtrl.controller('fourListCtrl', ['$scope', '$http', function ($scope, $http) {
 	'use strict';
-	$scope.message = 'hello';
-});
+	$http.get('js/json/four.json').success(function (data) {
+		$scope.board = data;
+	});
+	$scope.moves = 0;
+	$scope.message = 'here';
+	$scope.clearBoard = function () {
+		var i;
+		for (i = 0; i < 16; i++) {
+			this.loc[i].value = ' ';
+		}
+		this.moves = 0;
+	};
+	$scope.boardVal = function (val) {
+		if (val === null) {
+			return ' ';
+		}
+		if (val.x === null) {
+			return this.car;
+		}
+		if (val.x === true) {
+			$scope.car = 'x';
+		} else {
+			$scope.car = 'o';
+		}
+		if (val.cap === true) {
+			$scope.car = $scope.car.toUpperCase();
+		}
+		return $scope.car;
+	};
+}]);
