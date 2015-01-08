@@ -3,57 +3,7 @@
 /*global $, jQuery, angular, $scope, console, swal, checkWin*/
 
 var TicTacController = angular.module('TicTacController', []);
-/*
-ticApp.config(function ($routeProvider) {
-	'use strict';
-	$routeProvider.
-		when('/', {
-			templateUrl: 'partials/menu.html',
-			controller: 'PossListCtrl'
-		}).
-		when('/foursquare', {
-			templateUrl: 'partials/four.html',
-			controller: 'fourListCtrl'
-		}).
-		when('/classic', {
-			templateUrl: 'partials/tic-tac-toe.html',
-			controller: 'PossListCtrl'
-		});
-});
 
-TicTacController.controller('fourListCtrl', ['$scope', '$http', function ($scope, $http) {
-	'use strict';
-	$http.get('js/json/four.json').success(function (data) {
-		$scope.board = data;
-	});
-	$scope.moves = 0;
-	$scope.message = 'here';
-	$scope.clearBoard = function () {
-		var i;
-		for (i = 0; i < 16; i++) {
-			this.loc[i].value = ' ';
-		}
-		this.moves = 0;
-	};
-	$scope.boardVal = function (val) {
-		if (val === null) {
-			return ' ';
-		}
-		if (val.x === null) {
-			return this.car;
-		}
-		if (val.x === true) {
-			$scope.car = 'x';
-		} else {
-			$scope.car = 'o';
-		}
-		if (val.cap === true) {
-			$scope.car = $scope.car.toUpperCase();
-		}
-		return $scope.car;
-	};
-}]);
-*/
 TicTacController.controller('PossListCtrl', ['$scope', '$http', function ($scope, $http) {
 	'use strict';
 	$http.get('js/json/classic.json').success(function (data) {
@@ -103,3 +53,4 @@ TicTacController.controller('PossListCtrl', ['$scope', '$http', function ($scope
 		return this.moves++;
 	};
 }]);
+

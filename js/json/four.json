@@ -17,8 +17,8 @@
 	{ "pos" : 15, "row": 3, "col": 3, "x": null, "cap": null, "black": null, "italic": null}
 ],
 "filled": [
-	{ "pos" : 0,  "row": 0, "col": 0, "x": true, "cap": null, "black": null, "italic": null},
-	{ "pos" : 1,  "row": 0, "col": 1, "x": true, "cap": null, "black": null, "italic": null},
+	{ "pos" : 0,  "row": 0, "col": 0, "x": true, "cap": true, "black": true, "italic": true},
+	{ "pos" : 1,  "row": 0, "col": 1, "x": true, "cap": true, "black": true, "italic": false},
 	{ "pos" : 2,  "row": 0, "col": 2, "x": true, "cap": null, "black": null, "italic": null},
 	{ "pos" : 3,  "row": 0, "col": 3, "x": true, "cap": null, "black": null, "italic": null},
 	{ "pos" : 4,  "row": 1, "col": 0, "x": true, "cap": null, "black": null, "italic": null},
@@ -32,5 +32,5 @@
 	{ "pos" : 12, "row": 3, "col": 0, "x": false, "cap": null, "black": null, "italic": null},
 	{ "pos" : 13, "row": 3, "col": 1, "x": false, "cap": null, "black": null, "italic": null},
 	{ "pos" : 14, "row": 3, "col": 2, "x": false, "cap": null, "black": null, "italic": null},
-	{ "pos" : 15, "row": 3, "col": 3, "x": false, "cap": null, "black": null, "italic": null}
+	{ "pos" : 15, "row": 3, "col": 3, "x": false, "cap": false, "black": false, "italic": false}
 ]}
