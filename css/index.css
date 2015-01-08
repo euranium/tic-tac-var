@@ -9,6 +9,11 @@ html, body {
 	margin-top: 50px;
 }
 
+#fourSquareApp h2 {
+	display: inline;
+	margin-left: 8px;
+}
+
 #menu_button {
 	text-align: center;
 	width: 100px;
