@@ -37,7 +37,11 @@
 			<td id='14' ng-click='setPiece(14)' class='last'>{{ boardVal(board.start[14]) }}</td>
 			<td id='15' ng-click='setPiece(15)' class='last'>{{ boardVal(board.start[15]) }}</td> 
 		</tr>  
-	</table >
+		</table >
+		<h2>Current Selected Piece</h2>
+		<br />
+		<h2 id='current'>{{ boardVal(currentPiece) }}</h2>
+		<br />
 	<button id='clear' class='btn btn-primary' ng-click='clearBoard()'>Clear the Board</button>
 	<br />
 	<h2 id='00' ng-click='getPiece(0)'>{{ boardVal(board.filled[0]) }}</h2>

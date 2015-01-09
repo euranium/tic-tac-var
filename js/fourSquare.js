@@ -14,6 +14,7 @@ fourSquareCtrl.controller('fourListCtrl', ['$scope', '$http', function ($scope, 
 	$scope.getPiece = function (pos) {
 		if (this.win === false) {
 			$scope.currentPiece = this.board.filled[pos];
+			this.currentPiece.pos = 'current';
 		} else {
 			swal('game over, please reset to continue playing');
 		}
@@ -54,6 +55,9 @@ fourSquareCtrl.controller('fourListCtrl', ['$scope', '$http', function ($scope, 
 	$scope.boardVal = function (val) {
 		if (!val) {
 			return ' ';
+		}
+		if (val.pos === 'current') {
+			$('#current').attr('style', '');
 		}
 		if (val.x === null) {
 			return ' ';
