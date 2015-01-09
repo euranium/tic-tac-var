@@ -1,5 +1,5 @@
 /*jslint plusplus: true*/
-/*global $, jQuery, angular, module, scope, swal, setItal, console, setCol, setColItal */
+/*global $, jQuery, angular, module, scope, swal, setItal, console, checkFourWin, setCol, setColItal */
 
 var fourSquareCtrl = angular.module('fourSquareCtrl', []);
 
@@ -10,6 +10,7 @@ fourSquareCtrl.controller('fourListCtrl', ['$scope', '$http', function ($scope, 
 	});
 	$scope.moves = 0;
 	$scope.currentPiece = '';
+	$scope.win = '';
 	$scope.getPiece = function (pos) {
 		$scope.currentPiece = this.board.filled[pos];
 	};
@@ -17,14 +18,23 @@ fourSquareCtrl.controller('fourListCtrl', ['$scope', '$http', function ($scope, 
 		if ($scope.currentPiece === '') {
 			return swal('Please select a piece to place first');
 		}
-		var temp = this.board.start[pos].pos;
+		var temp, piece;
+		piece = '#' + this.currentPiece.pos;
+		$(piece).hide();
+		temp = this.board.start[pos].pos;
 		this.board.start[pos] = this.currentPiece;
 		this.board.start[pos].pos = temp;
+		this.win = checkFourWin(this.board.start);
 		this.currentPiece = '';
 	};
 	$scope.clearBoard = function () {
 		$http.get('js/json/four.json').success(function (data) {
 			$scope.board = data;
+			var i, n;
+			for (i = 0; i < this.board.length; i++) {
+				n = '#' + this.board.filled[i].pos;
+				$(n).show();
+			}
 		});
 		console.log('here');
 		this.moves = 0;

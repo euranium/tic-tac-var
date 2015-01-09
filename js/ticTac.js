@@ -12,6 +12,20 @@ Array.prototype.allSame = function () {
 
     return true;
 };
+Array.prototype.allSameX = function () {
+	'use strict';
+	var i;
+	for (i = 1; i < this.length; i++) {
+		if (this[i].x !== this[0].x) {
+			return false;
+		}
+	}
+};
+
+function checkFourWin(board) {
+	'use strict';
+	return '';
+}
 
 function setItal(poss) {
 	'use strict';
