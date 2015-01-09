@@ -41,7 +41,7 @@ fourSquareCtrl.controller('fourListCtrl', ['$scope', '$http', function ($scope, 
 	$scope.clearBoard = function () {
 		$http.get('js/json/four.json').success(function (data) {
 			$scope.board = data;
-			$scope.win = '';
+			$scope.win = false;
 			$scope.currentPiece = '';
 			var i, n;
 			for (i = 0; i < 16; i++) {
