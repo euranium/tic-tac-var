@@ -10,11 +10,18 @@ fourSquareCtrl.controller('fourListCtrl', ['$scope', '$http', function ($scope, 
 	});
 	$scope.moves = 0;
 	$scope.currentPiece = '';
-	$scope.win = '';
+	$scope.win = false;
 	$scope.getPiece = function (pos) {
-		$scope.currentPiece = this.board.filled[pos];
+		if (this.win === false) {
+			$scope.currentPiece = this.board.filled[pos];
+		} else {
+			swal('game over, please reset to continue playing');
+		}
 	};
 	$scope.setPiece = function (pos) {
+		if (this.win === true) {
+			return swal('game over, please reset to continue playing');
+		}
 		if ($scope.currentPiece === '') {
 			return swal('Please select a piece to place first');
 		}
@@ -25,19 +32,24 @@ fourSquareCtrl.controller('fourListCtrl', ['$scope', '$http', function ($scope, 
 		this.board.start[pos] = this.currentPiece;
 		this.board.start[pos].pos = temp;
 		this.win = checkFourWin(this.board.start);
+		if (this.win !== false) {
+			this.win = true;
+			return swal('game over');
+		}
 		this.currentPiece = '';
 	};
 	$scope.clearBoard = function () {
 		$http.get('js/json/four.json').success(function (data) {
 			$scope.board = data;
+			$scope.win = '';
+			$scope.currentPiece = '';
 			var i, n;
-			for (i = 0; i < this.board.length; i++) {
-				n = '#' + this.board.filled[i].pos;
+			for (i = 0; i < 16; i++) {
+				n = '#0' + i;
 				$(n).show();
 			}
 		});
-		console.log('here');
-		this.moves = 0;
+		return (this.moves = 0);
 	};
 	$scope.boardVal = function (val) {
 		if (!val) {
