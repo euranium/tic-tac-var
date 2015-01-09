@@ -14,28 +14,28 @@
 	<h3>Four Square Tic-Tac-Toe</h3>
 	<table id='ticTable'>
 		<tr id='row1'>
-			<td ng-click='setPiece(0)'>{{ boardVal(board.start[0]) }} </td>
-			<td id='0'>{{ boardVal(board.start[1]) }}</td>
-			<td id='1'>{{ boardVal(board.start[2]) }}</td>
-			<td>{{ boardVal(board.start[3]) }}</td> 
+			<td id='0' ng-click='setPiece(0)'>{{ boardVal(board.start[0]) }} </td>
+			<td id='1' ng-click='setPiece(1)'>{{ boardVal(board.start[1]) }}</td>
+			<td id='2' ng-click='setPiece(2)'>{{ boardVal(board.start[2]) }}</td>
+			<td id='3' ng-click='setPiece(3)'>{{ boardVal(board.start[3]) }}</td> 
 		</tr>
 		<tr id='row2'>
-			<td>{{ boardVal(board.start[4]) }}</td>
-			<td>{{ boardVal(board.start[5]) }}</td>
-			<td>{{ boardVal(board.start[6]) }}</td>
-			<td>{{ boardVal(board.start[7]) }}</td> 
+			<td id='4' ng-click='setPiece(4)'>{{ boardVal(board.start[4]) }}</td>
+			<td id='5' ng-click='setPiece(5)'>{{ boardVal(board.start[5]) }}</td>
+			<td id='6' ng-click='setPiece(6)'>{{ boardVal(board.start[6]) }}</td>
+			<td id='7' ng-click='setPiece(7)'>{{ boardVal(board.start[7]) }}</td> 
 		</tr> 
 		<tr id='row3'>
-			<td>{{ boardVal(board.start[8]) }}</td>
-			<td>{{ boardVal(board.start[9]) }}</td>
-			<td>{{ boardVal(board.start[10]) }}</td>
-			<td>{{ boardVal(board.start[11]) }}</td> 
+			<td id='8' ng-click='setPiece(8)'>{{ boardVal(board.start[8]) }}</td>
+			<td id='9' ng-click='setPiece(9)'>{{ boardVal(board.start[9]) }}</td>
+			<td id='10' ng-click='setPiece(10)'>{{ boardVal(board.start[10]) }}</td>
+			<td id='11' ng-click='setPiece(11)'>{{ boardVal(board.start[11]) }}</td> 
 		</tr>
 		<tr id='row4'>
-			<td class='last'>{{ boardVal(board.start[12]) }}</td>
-			<td class='last'>{{ boardVal(board.start[13]) }}</td>
-			<td class='last'>{{ boardVal(board.start[14]) }}</td>
-			<td class='last'>{{ boardVal(board.start[15]) }}</td> 
+			<td id='12' ng-click='setPiece(12)' class='last'>{{ boardVal(board.start[12]) }}</td>
+			<td id='13' ng-click='setPiece(13)' class='last'>{{ boardVal(board.start[13]) }}</td>
+			<td id='14' ng-click='setPiece(14)' class='last'>{{ boardVal(board.start[14]) }}</td>
+			<td id='15' ng-click='setPiece(15)' class='last'>{{ boardVal(board.start[15]) }}</td> 
 		</tr>  
 	</table >
 	<button id='clear' class='btn btn-primary' ng-click='clearBoard()'>Clear the Board</button>

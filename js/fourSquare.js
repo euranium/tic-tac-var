@@ -18,7 +18,6 @@ fourSquareCtrl.controller('fourListCtrl', ['$scope', '$http', function ($scope, 
 			return swal('Please select a piece to place first');
 		}
 		var temp = this.board.start[pos].pos;
-		console.log(this.board.start[pos]);
 		this.board.start[pos] = this.currentPiece;
 		this.board.start[pos].pos = temp;
 		this.currentPiece = '';
