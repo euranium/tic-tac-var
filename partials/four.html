@@ -44,21 +44,23 @@
 		<br />
 	<button id='clear' class='btn btn-primary' ng-click='clearBoard()'>Clear the Board</button>
 	<br />
-	<h2 id='00' ng-click='getPiece(0)'>{{ boardVal(board.filled[0]) }}</h2>
-	<h2 id='01' ng-click='getPiece(1)'>{{ boardVal(board.filled[1]) }}</h2> 
-	<h2 id='02' ng-click='getPiece(2)'>{{ boardVal(board.filled[2]) }}</h2> 
-	<h2 id='03' ng-click='getPiece(3)'>{{ boardVal(board.filled[3]) }}</h2>
-	<h2 id='04' ng-click='getPiece(4)'>{{ boardVal(board.filled[4]) }}</h2> 
-	<h2 id='05' ng-click='getPiece(5)'>{{ boardVal(board.filled[5]) }}</h2> 
-	<h2 id='06' ng-click='getPiece(6)'>{{ boardVal(board.filled[6]) }}</h2>
-	<h2 id='07' ng-click='getPiece(7)'>{{ boardVal(board.filled[7]) }}</h2> 
-	<br />
-	<h2 id='08'  ng-click='getPiece(8)'>{{ boardVal(board.filled[8]) }}</h2> 
-	<h2 id='09'  ng-click='getPiece(9)'>{{ boardVal(board.filled[9]) }}</h2>
-	<h2 id='010' ng-click='getPiece(10)'>{{ boardVal(board.filled[10]) }}</h2> 
-	<h2 id='011' ng-click='getPiece(11)'>{{ boardVal(board.filled[11]) }}</h2> 
-	<h2 id='012' ng-click='getPiece(12)'>{{ boardVal(board.filled[12]) }}</h2> 
-	<h2 id='013' ng-click='getPiece(13)'>{{ boardVal(board.filled[13]) }}</h2> 
-	<h2 id='014' ng-click='getPiece(14)'>{{ boardVal(board.filled[14]) }}</h2>
-	<h2 id="015" ng-click='getPiece(15)'>{{ boardVal(board.filled[15]) }}</h2> 
+	<div id='selection'>
+		<h2 id='00' ng-click='getPiece(0)'>{{ boardVal(board.filled[0]) }}</h2>
+		<h2 id='01' ng-click='getPiece(1)'>{{ boardVal(board.filled[1]) }}</h2> 
+		<h2 id='02' ng-click='getPiece(2)'>{{ boardVal(board.filled[2]) }}</h2> 
+		<h2 id='03' ng-click='getPiece(3)'>{{ boardVal(board.filled[3]) }}</h2>
+		<h2 id='04' ng-click='getPiece(4)'>{{ boardVal(board.filled[4]) }}</h2> 
+		<h2 id='05' ng-click='getPiece(5)'>{{ boardVal(board.filled[5]) }}</h2> 
+		<h2 id='06' ng-click='getPiece(6)'>{{ boardVal(board.filled[6]) }}</h2>
+		<h2 id='07' ng-click='getPiece(7)'>{{ boardVal(board.filled[7]) }}</h2> 
+		<br />
+		<h2 id='08'  ng-click='getPiece(8)'>{{ boardVal(board.filled[8]) }}</h2> 
+		<h2 id='09'  ng-click='getPiece(9)'>{{ boardVal(board.filled[9]) }}</h2>
+		<h2 id='010' ng-click='getPiece(10)'>{{ boardVal(board.filled[10]) }}</h2> 
+		<h2 id='011' ng-click='getPiece(11)'>{{ boardVal(board.filled[11]) }}</h2> 
+		<h2 id='012' ng-click='getPiece(12)'>{{ boardVal(board.filled[12]) }}</h2> 
+		<h2 id='013' ng-click='getPiece(13)'>{{ boardVal(board.filled[13]) }}</h2> 
+		<h2 id='014' ng-click='getPiece(14)'>{{ boardVal(board.filled[14]) }}</h2>
+		<h2 id="015" ng-click='getPiece(15)'>{{ boardVal(board.filled[15]) }}</h2> 
+	</div>
 </div>

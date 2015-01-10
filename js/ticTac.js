@@ -54,13 +54,27 @@ Array.prototype.allSameX = function () {
 function setItal(poss) {
 	'use strict';
 	poss = '#' + poss;
-	$(poss).attr('style', 'font-style:italic; font-family: Georgia');
+	$(poss).attr('style', 'font-style:italic; font-family: Georgia; color: black;');
+}
+function resetCurrent() {
+	'use strict';
+	$('#current').attr('style', '');
+}
+function hide(pos) {
+	'use strict';
+	pos = '#' + pos;
+	$(pos).hide();
+}
+function setNorm(poss) {
+	'use strict';
+	poss = '#' + poss;
+	$(poss).attr('style', 'color: black; font-style: normal; font-style: Times');
 }
 
 function setCol(poss) {
 	'use strict';
 	poss = '#' + poss;
-	$(poss).attr('style', 'color:orange;');
+	$(poss).attr('style', 'color:orange; font-style: normal; font-style: Times');
 }
 
 function setColItal(poss) {

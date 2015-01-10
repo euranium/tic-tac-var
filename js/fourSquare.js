@@ -1,5 +1,5 @@
 /*jslint plusplus: true*/
-/*global $, jQuery, angular, module, scope, swal, setItal, console, checkFourWin, setCol, setColItal */
+/*global $, jQuery, angular, module, scope, swal, setItal, console, checkFourWin, setCol, setColItal, resetCurrent, hide, setNorm */
 
 var fourSquareCtrl = angular.module('fourSquareCtrl', []);
 
@@ -13,22 +13,28 @@ fourSquareCtrl.controller('fourListCtrl', ['$scope', '$http', function ($scope, 
 	$scope.win = false;
 	$scope.getPiece = function (pos) {
 		if (this.win === false) {
+			// cannot selct a piece to place if game over
 			$scope.currentPiece = this.board.filled[pos];
-			this.currentPiece.pos = 'current';
+			this.currentPiece.current = 'current';
 		} else {
 			swal('game over, please reset to continue playing');
 		}
 	};
 	$scope.setPiece = function (pos) {
 		if (this.win === true) {
+			// if the game has been won the
+			// board needs to be reset
 			return swal('game over, please reset to continue playing');
 		}
 		if ($scope.currentPiece === '') {
+			// if there is no piece selected to place
+			// the player needs to select one
 			return swal('Please select a piece to place first');
 		}
-		var temp, piece;
-		piece = '#' + this.currentPiece.pos;
-		$(piece).hide();
+		var temp;
+		// hide the displayed piece at the bot of 
+		// the board
+		hide(this.currentPiece.pos);
 		temp = this.board.start[pos].pos;
 		this.board.start[pos] = this.currentPiece;
 		this.board.start[pos].pos = temp;
@@ -38,6 +44,7 @@ fourSquareCtrl.controller('fourListCtrl', ['$scope', '$http', function ($scope, 
 			return swal('game over');
 		}
 		this.currentPiece = '';
+		return;
 	};
 	$scope.clearBoard = function () {
 		$http.get('js/json/four.json').success(function (data) {
@@ -56,11 +63,13 @@ fourSquareCtrl.controller('fourListCtrl', ['$scope', '$http', function ($scope, 
 		if (!val) {
 			return ' ';
 		}
-		if (val.pos === 'current') {
-			$('#current').attr('style', '');
-		}
 		if (val.x === null) {
 			return ' ';
+		}
+		var temp = val.pos;
+		if (val.current !== undefined) {
+			val.pos = 'current';
+			resetCurrent();
 		}
 		if (val.x === true) {
 			$scope.car = 'x';
@@ -72,13 +81,15 @@ fourSquareCtrl.controller('fourListCtrl', ['$scope', '$http', function ($scope, 
 		}
 		if ((val.italic === true) && (val.black === true)) {
 			setItal(val.pos);
-		}
-		if ((val.black === false) && (val.italic === false)) {
+		} else if ((val.black === false) && (val.italic === false)) {
 			setCol(val.pos);
-		}
-		if ((val.black === false) && (val.italic === true)) {
+		} else if ((val.black === false) && (val.italic === true)) {
 			setColItal(val.pos);
+		} else if ((val.black === true) && (val.italic === false)) {
+			setNorm(val.pos);
 		}
+		val.pos = temp;
+		val.current = undefined;
 		return $scope.car;
 	};
 }]);
