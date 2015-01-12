@@ -9,7 +9,6 @@ Array.prototype.allSame = function () {
 			return false;
 		}
     }
-
     return true;
 };
 Array.prototype.allSameX = function () {
