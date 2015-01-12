@@ -5,9 +5,13 @@ var fourSquareCtrl = angular.module('fourSquareCtrl', []);
 
 fourSquareCtrl.controller('fourListCtrl', ['$scope', '$http', function ($scope, $http) {
 	'use strict';
+	// get the json data on the board
+	// has the possitions, and other such
 	$http.get('js/json/four.json').success(function (data) {
 		$scope.board = data;
 	});
+	// genral vars to keep track of the # moves, if game over,
+	// the currently selected piece
 	$scope.moves = 0;
 	$scope.currentPiece = '';
 	$scope.win = false;
