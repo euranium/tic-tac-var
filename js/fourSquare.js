@@ -7,6 +7,7 @@ fourSquareCtrl.controller('fourListCtrl', ['$scope', '$http', function ($scope, 
 	'use strict';
 	$http.get('js/json/four.json').success(function (data) {
 		$scope.board = data;
+		$scope.replaceBoard = data;
 	});
 	$scope.moves = 0;
 	$scope.currentPiece = '';
@@ -74,7 +75,7 @@ fourSquareCtrl.controller('fourListCtrl', ['$scope', '$http', function ($scope, 
 		if (val.x === true) {
 			$scope.car = 'x';
 		} else {
-			$scope.car = 'y';
+			$scope.car = 'j';
 		}
 		if (val.cap === true) {
 			$scope.car = $scope.car.toUpperCase();
