@@ -17,6 +17,10 @@ ticApp.config(['$routeProvider', function ($routeProvider) {
 			templateUrl: 'partials/four.html',
 			controller: 'fourListCtrl'
 		})
+		.when('/incept', {
+			templateUrl: 'partials/incept.html',
+			controller: 'inceptController'
+		})
 		.otherwise({
 			redirectTo: '/'
 		});
