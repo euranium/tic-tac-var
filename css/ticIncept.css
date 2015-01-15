@@ -3,4 +3,41 @@
 	width: 500px;
 	margin: 0 auto;
 	margin-top: 50px;
+	margin-bottom: 50px;
 }
+#inceptTable {
+	margin: 0 auto;
+}
+
+#inceptApp td {
+	font-size: 200%;
+	border-left: 1px solid #000;
+	border-radius: 25px;
+	width: 30px;
+	text-align: center;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid black;
+}
+#inceptApp .last{
+	border-bottom: none;
+}
+#inceptApp td:first-child {
+border-left: none;
+}
+#ticTable td:last-child {
+border-right: none;
+}
+#table1, #table2, #table4, #table5, #table7 #table8{
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+#table3, #table6{
+	margin-bottom: 20px;
+}
+#inceptApp .left {
+	border-right: none;
+}
+#inceptApp .data{
+	border: none;
+}
+
